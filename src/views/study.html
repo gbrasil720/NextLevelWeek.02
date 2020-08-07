@@ -30,6 +30,7 @@ Language
     <link rel="stylesheet" href="./styles/partials/forms.css">
     <link rel="stylesheet" href="./styles/partials/page-study.css">
 
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/png">
 
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
 </head>
@@ -80,9 +81,13 @@ Language
         </header>
 
         <main>
-            
-            {%for proffy in proffys %}
 
+        {% if proffys == "" %}
+            <p class="no-results"> Nenhum professor encontrado com a sua pesquisa. </p>
+
+            {% else %}
+            
+            {% for proffy in proffys %}
             <article class="teacher-item">
                 <header>
                     <img
@@ -106,7 +111,9 @@ Language
                 
             </article>
 
-            {%endfor%}
+            {% endfor %}
+
+        {% endif %}
 
         </main>
     </div>
